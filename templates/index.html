@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <h1>ARTICLES</h1>
+  <div>
+    {%for article in articles%}
+    <h6>{{article["title"]}}</h6>
+    <p>{{article["date"]}}</p>
+    {%endfor%}
+  </div>
+</body>
+</html>

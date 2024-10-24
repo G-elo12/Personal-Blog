@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Articles</h1>
+    <div><a href="/add">+</a></div>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2><a href="/{{ article['id'] }}">{{ article["title"] }}</a></h2>
+                <p>{{ article["body"] }}</p>
+                <button onclick="confirmDeletion('{{ article['id'] }}')">delete</button>
+                <button onclick="edit('{{ article['id'] }}')">edit</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script>
+        function confirmDeletion(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este artículo?")) {
+                window.location.href = `/delete/${id}`;
+            }
+        }
+        function edit(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este artículo?")) {
+                window.location.href = `/edit/${id}`;
+            }
+        }
+    </script>
+</body>
+</html>
